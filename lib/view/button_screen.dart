@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:local_package/res/colors.dart';
-import 'package:local_package/view/widgets/bottom_sheet.dart';
 
 import 'widgets/tabbar.dart';
 
