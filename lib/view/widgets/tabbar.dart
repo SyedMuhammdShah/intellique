@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:local_package/res/colors.dart';
+import 'package:local_package/view/screens/leaderboard_screen.dart';
 import 'package:local_package/view/widgets/leaderboard_list.dart';
 import 'package:local_package/view/widgets/toppers_widget.dart';
+import 'package:local_package/view/screens/rewards_screen.dart';
 
 class BottomSheetWithTabs extends StatefulWidget {
   @override
@@ -34,7 +36,7 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTi
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.only(left: 8,right: 9),
             child: TabBar(
               labelColor: Colors.white,
               controller: _tabController,
@@ -42,7 +44,7 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTi
               unselectedLabelColor: AppColors.unfocusedTabbar,
               // indicatorPadding: EdgeInsets.symmetric(horizontal: 12),
               indicatorSize: TabBarIndicatorSize.tab,
-              labelStyle: TextStyle(fontSize: 8, fontWeight: FontWeight.w500),
+              labelStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
               tabs: [
                 Tab(text: 'Leaderboard'),
                 Tab(text: 'Rewards'),
@@ -55,15 +57,8 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTi
             child: TabBarView(
               controller: _tabController,
               children: [
-                Column(
-                  children: [
-                    ToppersWidget(),
-                    LeaderboardList()
-
-
-                  ],
-                ),
-                Center(child: Text('Content for Tab 2')),
+                LeaderboardScreen(),
+                Center(child: RewardsScreen()),
                 Center(child: Text('Content for Tab 3')),
                 Center(child: Text('Content for Tab 4')),
               ],
