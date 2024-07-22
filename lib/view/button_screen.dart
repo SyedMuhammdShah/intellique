@@ -25,7 +25,7 @@ class ButtonScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  BottomSheetWithTabs()
+                  BottomSheetWithTabs(),
 
                 ],
               ),

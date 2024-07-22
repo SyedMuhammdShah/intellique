@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:local_package/res/colors.dart';
+import 'package:local_package/view/screens/leaderboard_screen.dart';
+import 'package:local_package/view/screens/streak.dart';
+import 'package:local_package/view/widgets/leaderboard_list.dart';
+import 'package:local_package/view/widgets/toppers_widget.dart';
 import 'package:local_package/view/screens/rewards_screen.dart';
 
 class BottomSheetWithTabs extends StatefulWidget {
@@ -54,20 +58,9 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTi
             child: TabBarView(
               controller: _tabController,
               children: [
-                Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CircleAvatar(),
-                        CircleAvatar(),
-                        CircleAvatar(),
-                      ],
-                    )
-                  ],
-                ),
+                LeaderboardScreen(),
                 Center(child: RewardsScreen()),
-                Center(child: Text('Content for Tab 3')),
+                Center(child: StreakScreen()),
                 Center(child: Text('Content for Tab 4')),
               ],
             ),
