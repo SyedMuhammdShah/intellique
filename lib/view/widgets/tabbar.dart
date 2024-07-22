@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:local_package/res/colors.dart';
+import 'package:local_package/view/widgets/leaderboard_list.dart';
+import 'package:local_package/view/widgets/toppers_widget.dart';
 
 class BottomSheetWithTabs extends StatefulWidget {
   @override
@@ -55,14 +57,10 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTi
               children: [
                 Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CircleAvatar(),
-                        CircleAvatar(),
-                        CircleAvatar(),
-                      ],
-                    )
+                    ToppersWidget(),
+                    LeaderboardList()
+
+
                   ],
                 ),
                 Center(child: Text('Content for Tab 2')),
