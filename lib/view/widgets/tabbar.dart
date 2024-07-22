@@ -17,6 +17,9 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTi
   void initState() {
     super.initState();
     _tabController = TabController(length: 4, vsync: this); // Adjust the length to the number of tabs
+
+
+
   }
 
   @override
@@ -58,7 +61,7 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTi
               controller: _tabController,
               children: [
                 LeaderboardScreen(),
-                Center(child: RewardsScreen()),
+                RewardsScreen(),
                 Center(child: Text('Content for Tab 3')),
                 Center(child: Text('Content for Tab 4')),
               ],
