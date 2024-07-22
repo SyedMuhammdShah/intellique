@@ -12,7 +12,7 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTi
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this); // Adjust the length to the number of tabs
+    _tabController = TabController(length: 4, vsync: this); // Adjust the length to the number of tabs
   }
 
   @override
@@ -27,27 +27,47 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTi
       height: MediaQuery.of(context).size.height * 0.8,
       decoration: BoxDecoration(
         color: Colors.transparent,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(170)),
       ),
       child: Column(
         children: [
-          TabBar(
-            labelColor: Colors.white,
-            overlayColor: WidgetStatePropertyAll(AppColors.unfocusedTabbar),
-            controller: _tabController,
-            tabs: [
-              Tab(text: 'Tab 1',),
-              Tab(text: 'Tab 2'),
-              Tab(text: 'Tab 3'),
-            ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: TabBar(
+              labelColor: Colors.white,
+              controller: _tabController,
+              indicatorColor: Colors.white,
+              unselectedLabelColor: AppColors.unfocusedTabbar,
+              // indicatorPadding: EdgeInsets.symmetric(horizontal: 12),
+              indicatorSize: TabBarIndicatorSize.tab,
+              labelStyle: TextStyle(fontSize: 8, fontWeight: FontWeight.w500),
+              tabs: [
+                Tab(text: 'Leaderboard'),
+                Tab(text: 'Rewards'),
+                Tab(text: 'Streak'),
+                Tab(text: 'MLM'),
+              ],
+            ),
           ),
           Expanded(
             child: TabBarView(
               controller: _tabController,
               children: [
-                Center(child: Text('Content for Tab 1')),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CircleAvatar(),
+                        CircleAvatar(),
+                        CircleAvatar(),
+                      ],
+                    )
+                  ],
+                ),
                 Center(child: Text('Content for Tab 2')),
                 Center(child: Text('Content for Tab 3')),
+                Center(child: Text('Content for Tab 4')),
               ],
             ),
           ),

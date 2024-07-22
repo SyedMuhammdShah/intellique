@@ -18,6 +18,9 @@ class ButtonScreen extends StatelessWidget {
             return Container(
               height: MediaQuery.of(context).size.height * 0.8,
               width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(170)),
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
@@ -30,9 +33,9 @@ class ButtonScreen extends StatelessWidget {
           },
         );
       },
-      child: Icon(Icons.add, color: AppColors.mainColor,
-      size: 36,
-      ),
+        child: Icon(Icons.add, color: AppColors.mainColor,
+          size: 36,
+        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
