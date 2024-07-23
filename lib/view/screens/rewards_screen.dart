@@ -69,8 +69,8 @@ class _RewardsScreenState extends State<RewardsScreen> {
 
 
                     Container(
-                      // margin: EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+                      margin: EdgeInsets.only(left: 10, right: 20),
+                      // decoration: BoxDecoration(border: Border.all(color: Colors.black)),
                       child: Stack(
                         children: [
                           LinearPercentIndicator(
@@ -80,9 +80,9 @@ class _RewardsScreenState extends State<RewardsScreen> {
                             progressColor: Colors.blue,
 
                           ),
-                          // Positioned(
-                          //     left: MediaQuery.of(context).size.width * 0.56,
-                          //     child: CircleAvatar(radius: 8,))
+                          Positioned(
+                              left: MediaQuery.of(context).size.width * 0.56,
+                              child: CircleAvatar(radius: 8,))
                         ],
                       ),
                     ),
