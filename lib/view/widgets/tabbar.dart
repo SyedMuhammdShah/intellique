@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:local_package/res/colors.dart';
 import 'package:local_package/view/screens/leaderboard_screen.dart';
 import 'package:local_package/view/screens/mlm_screen.dart';
-import 'package:local_package/view/widgets/leaderboard_list.dart';
-import 'package:local_package/view/widgets/toppers_widget.dart';
+import 'package:local_package/view/screens/streak.dart';
 import 'package:local_package/view/screens/rewards_screen.dart';
 
 class BottomSheetWithTabs extends StatefulWidget {
@@ -11,16 +10,15 @@ class BottomSheetWithTabs extends StatefulWidget {
   _BottomSheetWithTabsState createState() => _BottomSheetWithTabsState();
 }
 
-class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTickerProviderStateMixin {
+class _BottomSheetWithTabsState extends State<BottomSheetWithTabs>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this); // Adjust the length to the number of tabs
-
-
-
+    _tabController = TabController(
+        length: 4, vsync: this); // Adjust the length to the number of tabs
   }
 
   @override
@@ -40,7 +38,7 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTi
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 8,right: 9),
+            padding: const EdgeInsets.only(left: 8, right: 9),
             child: TabBar(
               labelColor: Colors.white,
               controller: _tabController,
@@ -63,8 +61,9 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTi
               children: [
                 LeaderboardScreen(),
                 RewardsScreen(),
-                Center(child: Text('Content for Tab 3')),
+                StreakScreen(),
                 MlmScreen(),
+
               ],
             ),
           ),
