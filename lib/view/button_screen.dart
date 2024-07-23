@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:local_package/controller/user_controller.dart';
 import 'package:local_package/res/colors.dart';
 
 import 'widgets/tabbar.dart';
@@ -14,6 +15,12 @@ class ButtonScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
 
         onPressed: () {
+
+          // UserController userController = UserController();
+          // userController.getUser().then((value) {
+          //   print(value.user!.streaks!.count.toString());
+          // },);
+
         showModalBottomSheet<void>(
           isScrollControlled: true,
           backgroundColor: AppColors.mainColor,
@@ -36,14 +43,12 @@ class ButtonScreen extends StatelessWidget {
             );
           },
         );
+
+
       },
         child: Image.asset("assets/icons/star.png", width: 80, height: 40,),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        // splashColor: Colors.white.withOpacity(0.5),
-        // focusColor: Colors.white,
-        // hoverColor: Colors.white,
-        // foregroundColor: Colors.white,
       ),
     );
   }

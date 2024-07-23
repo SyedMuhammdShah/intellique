@@ -19,9 +19,9 @@ class LeaderboardList extends StatelessWidget {
               leading: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text("${index+3}", style: TextStyle(color: Colors.white, fontSize: 16),),
+                  Text("${index+3}", style: TextStyle(color: Colors.white, fontSize: 14),),
                   SizedBox(width: 10,),
-                  CircleAvatar(radius: 18,),
+                  CircleAvatar(radius: 18,backgroundImage: AssetImage("assets/images/profile3.png"),),
                 ],
               ),
               title: Text("Agenes Jones", style: TextStyle(color: Colors.white, fontSize: 16),),

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:local_package/Models/user_model.dart';
+import 'package:local_package/controller/user_controller.dart';
 import 'package:local_package/res/colors.dart';
 
 class StreakScreen extends StatelessWidget {
-  const StreakScreen({super.key});
+  StreakScreen({super.key});
+  UserController userController = UserController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,47 +26,31 @@ class StreakScreen extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      '12',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+
+            FutureBuilder<UserModel>(
+              future: userController.getUser(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState ==
+                    ConnectionState.waiting) {
+                  return Center(
+                      child: CircularProgressIndicator(
                         color: Colors.white,
-                      ),
-                    ),
-                    Text(
-                      'Current Streak',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text(
-                      '30',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Text(
-                      'Longest Streak',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+                      ));
+                } else if (snapshot.hasError) {
+                  return Text('Error: ${snapshot.error}');
+                } else if (snapshot.hasData) {
+                  final data = snapshot.data!;
+                  return _streaks(data);
+                } else {
+                  return Text("No data");
+                }
+              },
             ),
+
+
+
+
+
             SizedBox(height: 20),
             Card(
               elevation: 4,
@@ -124,6 +111,50 @@ Widget _buildDayCircle(String day, bool active) {
         style: TextStyle(
           color: Colors.white,
         ),
+      ),
+    ],
+  );
+}
+
+Widget _streaks(UserModel data){
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Column(
+        children: [
+          Text(
+            data.user!.streaks!.count.toString(),
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          Text(
+            'Current Streak',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+      Column(
+        children: [
+          Text(
+            '30',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          Text(
+            'Longest Streak',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ],
       ),
     ],
   );

@@ -29,9 +29,9 @@ class MlmScreen extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text("We have these people in our system.", style: TextStyle(color: Colors.white), textAlign: TextAlign.start,)),
           ),
-          ToppersContainer(),
-          ToppersContainer(),
-          ToppersContainer(),
+          ToppersContainer(image: "assets/images/profile2.png",),
+          ToppersContainer(image: "assets/images/profile3.png",),
+          ToppersContainer(image: "assets/images/profile1.png",),
 
 
 

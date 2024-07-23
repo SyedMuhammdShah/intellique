@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:local_package/res/colors.dart';
 
 class ToppersContainer extends StatelessWidget {
-  const ToppersContainer({super.key});
+   ToppersContainer({super.key, required this.image});
+  
+  String image;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class ToppersContainer extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(width: MediaQuery.of(context).size.width * 0.1,),
-          CircleAvatar(backgroundColor: Colors.green,),
+          CircleAvatar(backgroundColor: Colors.green, backgroundImage: AssetImage(image),),
           SizedBox(width: MediaQuery.of(context).size.width * 0.04,),
           Text("Agnes Jones", style: TextStyle(color: Colors.white),),
         ],

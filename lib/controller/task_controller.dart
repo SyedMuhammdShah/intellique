@@ -8,7 +8,8 @@ class TaskController {
 
 
  Future<List<RewardsModel>> getTasks() async{
-    var response = await http.get(Uri.parse('http://192.168.100.25:6000/api/todos?userid=1471607316667580421'));
+   String userId = "1471607316667580421";
+    var response = await http.get(Uri.parse('http://192.168.100.25:6000/api/todos?userid=$userId'));
     final jsonData = jsonDecode(response.body).cast<Map<String, dynamic>>();
     print("Response: ${response.body}");
     print("jsonData: $jsonData");

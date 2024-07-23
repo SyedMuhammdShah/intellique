@@ -11,11 +11,11 @@ class ToppersWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          secondPersons(context),
+          secondPersons("assets/images/profile2.png" ,context),
 
-          firstPerson(context),
+          firstPerson("assets/images/profile1.png" ,context),
 
-          thirdPersons(context),
+          thirdPersons("assets/images/profile3.png" ,context),
         ],
       ),
     );
@@ -53,12 +53,12 @@ class RewardsWidget extends StatelessWidget {
   }
 }
 
-Widget thirdPersons(BuildContext context){
+Widget thirdPersons(String image,BuildContext context){
   return Stack(
     children: [
       Column(
         children: [
-          CircleAvatar(maxRadius: 25,),
+          CircleAvatar(maxRadius: 25, backgroundImage: AssetImage(image),),
           SizedBox(height: 10,),
           Text("Agnes", style: TextStyle(fontWeight: FontWeight.w500, color: Colors.white),),
           SizedBox(height: 2,),
@@ -75,12 +75,12 @@ Widget thirdPersons(BuildContext context){
   );
 }
 
-Widget secondPersons(BuildContext context){
+Widget secondPersons(String image,BuildContext context){
   return Stack(
     children: [
       Column(
         children: [
-          CircleAvatar(maxRadius: 25,),
+          CircleAvatar(maxRadius: 25, backgroundImage: AssetImage(image),),
           SizedBox(height: 10,),
           Text("Agnes", style: TextStyle(fontWeight: FontWeight.w500, color: Colors.white),),
           SizedBox(height: 2,),
@@ -97,14 +97,14 @@ Widget secondPersons(BuildContext context){
   );
 }
 
-Widget firstPerson(BuildContext context){
+Widget firstPerson(String image,BuildContext context){
   return Stack(
     children: [
       Padding(
         padding: const EdgeInsets.only(top: 16),
         child: Column(
           children: [
-            CircleAvatar(maxRadius: 32,),
+            CircleAvatar(maxRadius: 32, backgroundImage: AssetImage(image),),
             SizedBox(height: 10,),
             Text("Agnes", style: TextStyle(fontWeight: FontWeight.w500, color: Colors.white),),
             SizedBox(height: 2,),
