@@ -17,16 +17,12 @@ class RewardsScreen extends StatefulWidget {
 }
 
 class _RewardsScreenState extends State<RewardsScreen> {
-
   TaskController tasks = TaskController();
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    tasks.getTasks().then((value) {
-      log(value.first.userId.toString());
-    },);
   }
 
   @override
@@ -43,8 +39,8 @@ class _RewardsScreenState extends State<RewardsScreen> {
               ),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Text(
-                  textAlign: TextAlign.center,
                   "Earn Rewards by completing \n these Tasks",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -71,52 +67,82 @@ class _RewardsScreenState extends State<RewardsScreen> {
                       height: 10,
                     ),
 
-                      LinearPercentIndicator(
-                      width: MediaQuery.of(context).size.width * 0.8,
-                      lineHeight: 8.0,
-                      percent: 0.75,
-                      progressColor: Colors.blue,
 
-                                        ),
-                    SizedBox(height: 10,),
+                    Container(
+                      // margin: EdgeInsets.symmetric(horizontal: 10),
+                      decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+                      child: Stack(
+                        children: [
+                          LinearPercentIndicator(
+                            width: MediaQuery.of(context).size.width * 0.8,
+                            lineHeight: 15.0,
+                            percent: 0.75,
+                            progressColor: Colors.blue,
 
+                          ),
+                          // Positioned(
+                          //     left: MediaQuery.of(context).size.width * 0.56,
+                          //     child: CircleAvatar(radius: 8,))
+                        ],
+                      ),
+                    ),
+
+
+                    SizedBox(
+                      height: 10,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 14),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Task", style: TextStyle(color: Colors.white, fontSize: 14),),
+                          Text(
+                            "Task",
+                            style: TextStyle(color: Colors.white, fontSize: 14),
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Points", style: TextStyle(color: Colors.white, fontSize: 14),),
-                              SizedBox(width: 10,),
-                              Text("Actions", style: TextStyle(color: Colors.white, fontSize: 14),),
+                              Text(
+                                "Points",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 14),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Actions",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 14),
+                              ),
                             ],
                           )
                         ],
                       ),
                     ),
-
-                    SizedBox(height: 10,),
-                    
+                    SizedBox(
+                      height: 10,
+                    ),
                     FutureBuilder<List<RewardsModel>>(
-                        future: tasks.getTasks(),
-                        builder: (context, snapshot) {
-                          if (snapshot.connectionState == ConnectionState.waiting) {
-                          return CircularProgressIndicator();
-                          } else if (snapshot.hasError) {
+                      future: tasks.getTasks(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return Center(
+                              child: CircularProgressIndicator(
+                            color: Colors.white,
+                          ));
+                        } else if (snapshot.hasError) {
                           return Text('Error: ${snapshot.error}');
-                          } else if (snapshot.hasData) {
+                        } else if (snapshot.hasData) {
                           final data = snapshot.data!;
                           return TaskList(tasks: data);
+                        } else {
+                          return Text("No data");
                         }
-                          else{
-                            return Text("No data");
-                          }
-                          },),
-
-
+                      },
+                    ),
                   ],
                 ),
               ),

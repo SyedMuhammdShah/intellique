@@ -10,7 +10,6 @@ class LeaderboardList extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: 30),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.only(topRight: Radius.circular(10), topLeft: Radius.circular(10)),
-            // border: Border.all(width: 0.3, color: Colors.white)
             border: BorderDirectional(top: BorderSide(width: 0.3, color: Colors.white),start: BorderSide(width: 0.3, color: Colors.white), end: BorderSide(width: 0.3, color: Colors.white), )
         ),
         child: ListView.builder(

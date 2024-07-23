@@ -11,8 +11,9 @@ class ButtonScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {
+      floatingActionButton: FloatingActionButton(
 
+        onPressed: () {
         showModalBottomSheet<void>(
           isScrollControlled: true,
           backgroundColor: AppColors.mainColor,
@@ -36,11 +37,13 @@ class ButtonScreen extends StatelessWidget {
           },
         );
       },
-        child: Icon(Icons.add, color: AppColors.mainColor,
-          size: 36,
-        ),
+        child: Image.asset("assets/icons/star.png", width: 80, height: 40,),
         backgroundColor: Colors.transparent,
         elevation: 0,
+        // splashColor: Colors.white.withOpacity(0.5),
+        // focusColor: Colors.white,
+        // hoverColor: Colors.white,
+        // foregroundColor: Colors.white,
       ),
     );
   }
