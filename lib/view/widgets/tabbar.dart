@@ -11,13 +11,15 @@ class BottomSheetWithTabs extends StatefulWidget {
   _BottomSheetWithTabsState createState() => _BottomSheetWithTabsState();
 }
 
-class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTickerProviderStateMixin {
+class _BottomSheetWithTabsState extends State<BottomSheetWithTabs>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this); // Adjust the length to the number of tabs
+    _tabController = TabController(
+        length: 4, vsync: this); // Adjust the length to the number of tabs
   }
 
   @override
@@ -37,7 +39,7 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTi
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 8,right: 9),
+            padding: const EdgeInsets.only(left: 8, right: 9),
             child: TabBar(
               labelColor: Colors.white,
               controller: _tabController,
@@ -59,9 +61,9 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs> with SingleTi
               controller: _tabController,
               children: [
                 LeaderboardScreen(),
-                Center(child: RewardsScreen()),
+                RewardsScreen(),
                 Center(child: StreakScreen()),
-                Center(child: Text('Content for Tab 4')),
+                Center(child: Text('Content for Tab 3')),
               ],
             ),
           ),
