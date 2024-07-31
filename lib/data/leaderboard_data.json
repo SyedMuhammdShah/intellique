@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "userName": "John Doe",
+    "userScore": 95,
+    "userImage": "https://example.com/images/user1.jpg"
+  },
+  {
+    "id": 2,
+    "userName": "Jane Smith",
+    "userScore": 82,
+    "userImage": "https://example.com/images/user2.png"
+  },
+  {
+    "id": 3,
+    "userName": "Alice Johnson",
+    "userScore": 98,
+    "userImage": "https://example.com/images/user3.jpeg"
+  },
+  {
+    "id": 4,
+    "userName": "Bob Brown",
+    "userScore": 75,
+    "userImage": "https://example.com/images/user4.gif"
+  },
+  {
+    "id": 5,
+    "userName": "Bob Brown",
+    "userScore": 100,
+    "userImage": "https://example.com/images/user4.gif"
+  }
+]

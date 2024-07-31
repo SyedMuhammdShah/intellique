@@ -1,8 +1,5 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:local_package/controller/user_controller.dart';
-import 'package:local_package/res/colors.dart';
+import 'package:intellique/src/res/colors.dart';
 
 import 'widgets/tabbar.dart';
 
@@ -11,12 +8,7 @@ class ButtonScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    String leaderBoardApi = 'lib/data/leaderboard_data.json';
-
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-
+    return FloatingActionButton(
         onPressed: () {
 
           // UserController userController = UserController();
@@ -39,7 +31,7 @@ class ButtonScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  BottomSheetWithTabs(LeaderBoardapi: leaderBoardApi,),
+                  BottomSheetWithTabs(),
 
                 ],
               ),
@@ -52,7 +44,6 @@ class ButtonScreen extends StatelessWidget {
         child: Image.asset("assets/icons/star.png", width: 80, height: 40,),
         backgroundColor: Colors.transparent,
         elevation: 0,
-      ),
-    );
+      );
   }
 }

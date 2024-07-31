@@ -38,6 +38,8 @@ dependencies:
   percent_indicator: ^4.2.3
   http: ^1.2.2
   get: ^4.6.6
+  intellique:
+    path: package/intellique
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +67,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - lib/data/leaderboard_data.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

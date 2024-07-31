@@ -1,12 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:local_package/Models/RewardsModel.dart';
-import 'package:local_package/controller/task_controller.dart';
-import 'package:local_package/res/colors.dart';
-import 'package:local_package/view/widgets/rewards_screen_widgets/task_widget.dart';
+import 'package:intellique/src/Models/RewardsModel.dart';
+import 'package:intellique/src/controller/task_controller.dart';
+import 'package:intellique/src/res/colors.dart';
+import 'package:intellique/src/view/widgets/rewards_screen_widgets/task_widget.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class RewardsScreen extends StatefulWidget {

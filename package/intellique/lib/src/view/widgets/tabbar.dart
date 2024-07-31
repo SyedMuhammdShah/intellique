@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:local_package/res/colors.dart';
-import 'package:local_package/view/screens/leaderboard_screen.dart';
-import 'package:local_package/view/screens/mlm_screen.dart';
-import 'package:local_package/view/screens/streak.dart';
-import 'package:local_package/view/screens/rewards_screen.dart';
+import 'package:intellique/src/res/colors.dart';
+import 'package:intellique/src/view/screens/leaderboard_screen.dart';
+import 'package:intellique/src/view/screens/mlm_screen.dart';
+import 'package:intellique/src/view/screens/rewards_screen.dart';
+import 'package:intellique/src/view/screens/streak.dart';
+
 
 class BottomSheetWithTabs extends StatefulWidget {
-  String LeaderBoardapi;
-  BottomSheetWithTabs({required this.LeaderBoardapi});
   @override
   _BottomSheetWithTabsState createState() => _BottomSheetWithTabsState();
 }
@@ -61,7 +60,7 @@ class _BottomSheetWithTabsState extends State<BottomSheetWithTabs>
             child: TabBarView(
               controller: _tabController,
               children: [
-                LeaderboardScreen(api: widget.LeaderBoardapi,),
+                LeaderboardScreen(),
                 RewardsScreen(),
                 StreakScreen(),
                 MlmScreen(),

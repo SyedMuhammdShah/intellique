@@ -99,6 +99,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  intellique:
+    dependency: "direct main"
+    description:
+      path: "package/intellique"
+      relative: true
+    source: path
+    version: "0.0.1"
   leak_tracker:
     dependency: transitive
     description:
